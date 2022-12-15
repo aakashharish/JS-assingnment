@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="rollno" />
+    <p></p>
+    <button>Click to get student info</button>
+  </body>
+  <script>
+    var rollno = document.getElementById("rollno");
+    var para = document.querySelector("p");
+    var btn = document.querySelector("button");
+
+    btn.addEventListener("click", () => {
+      rollnoValue = rollno.value.trim();
+      if (rollnoValue.substring(0, 6) === "ES19CS") {
+        para.innerHTML = "The student belongs to final year CSE.";
+      } else if (rollnoValue.substring(0, 6) === "ES20CS") {
+        para.innerHTML = "The student belongs to third year CSE.";
+      } else if (rollnoValue.substring(0, 6) === "ES21CS") {
+        para.innerHTML = "The student belongs to second year CSE.";
+      } else if (rollnoValue.substring(0, 6) === "ES22CS") {
+        para.innerHTML = "The student belongs to first year CSE.";
+      } else if (rollnoValue.substring(0, 6) === "ES19EC") {
+        para.innerHTML = "The student belongs to final year ECE.";
+      } else if (rollnoValue.substring(0, 6) === "ES20EC") {
+        para.innerHTML = "The student belongs to third year ECE.";
+      } else if (rollnoValue.substring(0, 6) === "ES21EC") {
+        para.innerHTML = "The student belongs to second year ECE.";
+      } else if (rollnoValue.substring(0, 6) === "ES22EC") {
+        para.innerHTML = "The student belongs to first year ECE.";
+      } else if (rollnoValue.substring(0, 6) === "ES19MH") {
+        para.innerHTML = "The student belongs to final year MECH.";
+      } else if (rollnoValue.substring(0, 6) === "ES20MH") {
+        para.innerHTML = "The student belongs to third year MECH.";
+      } else if (rollnoValue.substring(0, 6) === "ES21MH") {
+        para.innerHTML = "The student belongs to second year MECH.";
+      } else if (rollnoValue.substring(0, 6) === "ES22MH") {
+        para.innerHTML = "The student belongs to first year MECH.";
+      } else if (rollnoValue.substring(0, 6) === "ES19CH") {
+        para.innerHTML = "The student belongs to final year CHEMICAL.";
+      } else if (rollnoValue.substring(0, 6) === "ES20CH") {
+        para.innerHTML = "The student belongs to third year CHEMICAL.";
+      } else if (rollnoValue.substring(0, 6) === "ES21CH") {
+        para.innerHTML = "The student belongs to second year CHEMICAL.";
+      } else if (rollnoValue.substring(0, 6) === "ES22CH") {
+        para.innerHTML = "The student belongs to first year CHEMICAL.";
+      } else if (rollnoValue.substring(0, 6) === "ES19EE") {
+        para.innerHTML = "The student belongs to final year EEE.";
+      } else if (rollnoValue.substring(0, 6) === "ES20EE") {
+        para.innerHTML = "The student belongs to third year EEE.";
+      } else if (rollnoValue.substring(0, 6) === "ES21EE") {
+        para.innerHTML = "The student belongs to second year EEE.";
+      } else if (rollnoValue.substring(0, 6) === "ES22EE") {
+        para.innerHTML = "The student belongs to first year EEE.";
+      } else {
+        para.innerHTML = "Enter the valid Roll No!";
+      }
+    });
+  </script>
+</html>

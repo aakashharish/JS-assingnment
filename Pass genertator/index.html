@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        margin: 10px;
+      }
+      button {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <label>Password Generate</label>
+    <input type="text" id="pass" />
+    <button>Generate</button>
+  </body>
+
+  <script>
+    var btn = document.querySelector("button");
+    btn.addEventListener("click", () => {
+      var passWord = document.getElementById("pass");
+      const passChar =
+        "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*(){}[]':<.>?/\|";
+
+      let passLen = 8;
+      let password = "";
+
+      for (var i = 0; i < passLen; i++) {
+        var randomPassword = Math.floor(Math.random() * passChar.length);
+        password += passChar.substring(randomPassword, randomPassword + 1);
+      }
+      passWord.value = password;
+    });
+  </script>
+</html>

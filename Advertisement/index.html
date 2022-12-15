@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="ShowBanner()">
+    <center>
+      <img src="ad1.jpg" alt="" width="900px" height="300px" name="change" />
+    </center>
+  </body>
+
+  <script>
+    mybanner = new Array("ad1.jpg", "ad2.jpg", "ad3.jpg");
+    banner = 0;
+    function ShowBanner() {
+      if (document.images) {
+        banner++;
+        if (banner == mybanner.length) {
+          banner = 0;
+        }
+        document.change.src = mybanner[banner];
+        setTimeout("ShowBanner()", 5000);
+      }
+    }
+  </script>
+</html>

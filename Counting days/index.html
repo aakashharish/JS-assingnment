@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="date">
+      <input type="date" id="d1" />
+      <input type="date" id="d2" />
+    </div>
+    <button onclick="">Calculate</button>
+    <p id="para"></p>
+  </body>
+  <script>
+    let date1 = new Date(document.getElementById("d1").value);
+    let date2 = new Date(document.getElementById("d2").value);
+    let btn = document.querySelector("button");
+    let result = document.getElementById("para");
+
+    btn.addEventListener("click", () => {
+      let diff = date2.getTime() - date1.getTime();
+      let ms = 1000 * 3600 * 24;
+
+      result.innerHTML = "There are "+diff / ms+" days in between "+date1.getDate()+" and "+date2.getDate();
+    });
+  </script>
+</html>

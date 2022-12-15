@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="para1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed fuga veniam
+      laboriosam, qui quasi nulla nihil vitae nam ipsa fugiat itaque repudiandae
+      magnam quidem minima minus maxime eius hic aliquam? Quos facilis tenetur
+      in vero provident iste atque quibusdam. Eligendi, eum mollitia amet
+      voluptas accusantium harum quis perferendis nam dolores pariatur
+      doloremque veniam quibusdam accusamus possimus voluptatum incidunt unde
+    </p>
+
+    <select onchange="typeChange(this)">
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Arial">Arial</option>
+      <option value="Courier New">Courier New</option>
+    </select>
+
+    <select onchange="sizeChange(this)">
+      <option value="10px">10px</option>
+      <option value="20px">20px</option>
+      <option value="30px">30px</option>
+    </select>
+
+    <select onchange="colorChange(this.value)">
+      <option value="red">red</option>
+      <option value="green">green</option>
+      <option value="blue">blue</option>
+    </select>
+  </body>
+  <script>
+    function typeChange(a) {
+      var type = a.value;
+      document.getElementById("para1").style.fontFamily = type;
+    }
+    function sizeChange(e) {
+      var size = e.value;
+      document.getElementById("para1").style.fontSize = size;
+    }
+    function colorChange(e) {
+      var color = e;
+      document.getElementById("para1").style.color = color;
+    }
+  </script>
+</html>

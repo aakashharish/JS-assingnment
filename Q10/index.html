@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        margin: 10px;
+      }
+      button {
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="date" id="d1" value="2020-01-01" onchange="dateValid(this)" />
+
+    <p id="p1"></p>
+  </body>
+  <script>
+    let write = document.getElementById("p1");
+
+    function dateValid(e) {
+      var date1 = e.value;
+      if((date1 > 2000-01-01)||(date1 < 2020-09-01)){
+        write.innerHTML = "accepted";
+      } 
+      else{
+        write.innerHTML = "not accepted";
+      }
+    }
+  </script>
+</html>

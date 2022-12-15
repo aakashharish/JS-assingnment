@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button onclick="alpha()">Alpahabets</button>
+    <button onclick="numbers()">Numbers</button>
+    <button onclick="splchar()">Special Characters</button>
+
+    <p id="alpha1"></p>
+    <p id="num"></p>
+    <p id="splchar"></p>
+  </body>
+  <script>
+    function alpha() {
+      var text = document.querySelector("textarea").value;
+      var count = 0;
+      var alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrsstuvwxyz";
+
+      for (var i = 0; i < text.length; i++) {
+        if (alpha.indexOf(text[i]) > -1) {
+          count++;
+        }
+      }
+      document.getElementById("alpha1").innerHTML =
+        "There are " + count + " alphabets";
+    }
+
+    function numbers() {
+      var text = document.querySelector("textarea").value;
+      var count = 0;
+      var nums = "1234567890";
+
+      for (var i = 0; i < text.length; i++) {
+        if (nums.indexOf(text[i]) > -1) {
+          count++;
+        }
+      }
+      document.getElementById("num").innerHTML =
+        "There are " + count + " numbers";
+    }
+
+    function splchar() {
+      var text = document.querySelector("textarea").value;
+      var count = 0;
+      var sc = "!@#$%^&*().,/\|;:'{}[]_+-=~`";
+
+      for (var i = 0; i < text.length; i++) {
+        if (sc.indexOf(text[i]) > -1) {
+          count++;
+        }
+      }
+      document.getElementById("splchar").innerHTML =
+        "There are " + count + " special characters.";
+    }
+    //alpha("jhvukkhghxhgkugkuARGYH")
+  </script>
+</html>

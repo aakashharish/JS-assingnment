@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="table">
+      <tr>
+        <th>Roll.No</th>
+        <th>Name</th>
+        <th>Mark</th>
+      </tr>
+      <tr>
+        <td>101</td>
+        <td>Aswin</td>
+        <td>544</td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Ram</td>
+        <td>532</td>
+      </tr>
+      <tr>
+        <td>103</td>
+        <td>Nami</td>
+        <td>576</td>
+      </tr>
+      <tr>
+        <td>104</td>
+        <td>Naveen</td>
+        <td>567</td>
+      </tr>
+      <tr>
+        <td>105</td>
+        <td>Rajeshwari</td>
+        <td>511</td>
+      </tr>
+    </table>
+
+    <select onchange="borderChange(this)">
+      <option value="1px dotted #000">Dotted</option>
+      <option value="1px dashed #000">Dashed</option>
+      <option value="1px solid #000">Solid</option>
+    </select>
+
+    <input type="color" onchange="foregroundColor(this)" />
+    <input type="color" onchange="backgroundColor(this)" />
+
+    <select onchange="alignText(this)">
+      <option value="left">Left</option>
+      <option value="right">Right</option>
+      <option value="center">Center</option>
+      <option value="justify">Justify</option>
+    </select>
+  </body>
+
+  <script>
+    function borderChange(e) {
+      var border = e.value;
+      document.getElementById("table").style.border = border;
+    }
+
+    function foregroundColor(e) {
+      var fore = e.value;
+      var tds = document.getElementsByTagName("td");
+      var ths = document.getElementsByTagName("th");
+      for (var i = 0, j = ths.length; i < j; ++i) ths[i].style.color = fore;
+      for (var i = 0, j = tds.length; i < j; ++i) tds[i].style.color = fore;
+
+    }
+
+    function backgroundColor(e) {
+      var back = e.value;
+      document.getElementById("table").style.backgroundColor = back;
+    }
+
+    function alignText(e) {
+      var align = e.value;
+      document.getElementById("table").style.textAlign = align;
+    }
+  </script>
+</html>

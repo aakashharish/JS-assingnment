@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin: 10px 0px;
+      }
+      input {
+        margin: 10px 0px;
+      }
+      button {
+        margin: 10px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <form>
+        <label for="item">Item:</label>
+        <input
+          type="text"
+          id="item"
+          placeholder="Enter a Item"
+          autocomplete="off"
+        />
+
+        <button id="btnAdd">Add Item</button>
+
+        <label for="list">Item List:</label>
+        <select id="list" name="list" multiple></select>
+        <button id="btnRemove">Remove Item</button>
+      </form>
+
+      <p></p>
+      <p id="para">remove text</p>
+    </div>
+
+    <script>
+      const btnAdd = document.querySelector("#btnAdd");
+      const btnRemove = document.querySelector("#btnRemove");
+      const listbox = document.querySelector("#list");
+      const item = document.querySelector("#item");
+      var paragraph = document.getElementById("para");
+
+      btnAdd.onclick = (e) => {
+        e.preventDefault();
+
+        if (item.value == "") {
+          alert("Please enter the something.");
+          return;
+        }
+
+        const option = new Option(item.value, item.value);
+        listbox.add(option);
+
+        item.value = "";
+      };
+
+      btnRemove.onclick = (e) => {
+        e.preventDefault();
+        paragraph.innerHTML =
+          "The removed item is " + listbox.options[listbox.selectedIndex].text;
+        listbox.remove(listbox.selectedIndex);
+      };
+    </script>
+  </body>
+</html>
